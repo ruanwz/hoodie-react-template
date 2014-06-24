@@ -95,6 +95,12 @@ Start app locally:
     $ cd myapp
     $ hoodie start
 
+Compile Coffee:
+ 
+    $ cd www/assets/scripts
+    $ browserify -t coffeeify coffee/content.coffee  | uglifyjs > bundle.js
+
+
 Create a database:
 
     $ jitsu database create couch myapp
