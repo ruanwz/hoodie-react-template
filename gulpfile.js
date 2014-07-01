@@ -8,7 +8,15 @@ var uglify = require('gulp-uglify');
 var browserify = require('gulp-browserify');
 var rename = require('gulp-rename');
 var exec = require('child_process').exec;
+var slim = require("gulp-slim");
 
+gulp.task('slim', function(){
+  gulp.src("www/assets/slim/*.slim")
+    .pipe(slim({
+      pretty: true
+    }))
+    .pipe(gulp.dest("www/"));
+});
 gulp.task('jest', function() {
   exec('npm test', function (err, stdout, stderr) {
     console.log(stdout);
@@ -52,6 +60,7 @@ gulp.task('sass', function() {
 // Watch Files For Changes
 gulp.task('watch', function() {
     //gulp.watch('js/*.js', ['lint', 'scripts']);
+    gulp.watch('www/assets/slim/*.slim', ['slim']);
     gulp.watch('www/assets/scss/*.scss', ['sass']);
     gulp.watch('www/assets/scripts/coffee/**/*.coffee', ['coffee']);
     gulp.watch('www/assets/scripts/coffee/**/*.coffee', ['jest']);
