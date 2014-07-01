@@ -7,7 +7,15 @@ var uglify = require('gulp-uglify');
 
 var browserify = require('gulp-browserify');
 var rename = require('gulp-rename');
+var exec = require('child_process').exec;
 
+gulp.task('jest', function() {
+  exec('npm test', function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    //console.log(err);
+  });
+});
 gulp.task('coffee', function() {
   gulp.src('www/assets/scripts/coffee/content.coffee', { read: false })
     .pipe(browserify({
@@ -46,6 +54,8 @@ gulp.task('watch', function() {
     //gulp.watch('js/*.js', ['lint', 'scripts']);
     gulp.watch('www/assets/scss/*.scss', ['sass']);
     gulp.watch('www/assets/scripts/coffee/**/*.coffee', ['coffee']);
+    gulp.watch('www/assets/scripts/coffee/**/*.coffee', ['jest']);
+    gulp.watch('www/assets/scripts/__tests__/**/*.coffee', ['jest']);
 });
 
 // Default Task
