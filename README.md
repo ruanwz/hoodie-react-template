@@ -100,6 +100,13 @@ Compile Coffee:
     $ cd www/assets/scripts
     $ browserify -t coffeeify coffee/content.coffee  | uglifyjs > bundle.js
 
+    or run gulp:
+    gulp
+
+Minify Javascript:
+    gulp uglify
+
+
 
 Create a database:
 
