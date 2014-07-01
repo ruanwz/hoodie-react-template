@@ -1,6 +1,8 @@
-React = require 'react'
-$ = require 'jquery'
+CR = require './cr.coffee'
 Main = start: ->
-  console.log 'abc'
+  #console.log CR.React
+  #console.log CR.Jquery
+  #console.log CR.FluxMixin
+
 
 module.exports = Main
