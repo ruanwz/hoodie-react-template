@@ -1,74 +1,40 @@
-
 doctype html
 html.no-js
   head
     meta charset="utf-8" 
-      meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" 
-        title myappname
-        meta content="" name="description" 
-          meta content="width=device-width" name="viewport" 
-            link href="assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" 
-              link href="assets/vendor/prism/prism.css" rel="stylesheet" 
-                link href="assets/css/main.css" rel="stylesheet" 
+    meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" 
+    title User Registration
+    meta content="" name="description" 
+    meta content="width=device-width" name="viewport" 
+    link href="assets/vendor/bootstrap-sass/dist/css/bootstrap.min.css" rel="stylesheet" 
+    link href="assets/vendor/bootstrap-sass/dist/css/bootstrap-theme.min.css" rel="stylesheet" 
+    link href="http://fonts.googleapis.com/css?family=Handlee" rel="stylesheet" type="text/css" 
+    link href="assets/css/main.css" rel="stylesheet" 
   body
-    .container
-      .hero-unit
-        h1 myappname
-        p
-          | hoodie playground.
-        .hoodie-accountbar
-          .hoodie-account-signedout
-            span.btn-group
-              button.btn.btn-small.btn-inverse data-hoodie-action="signup"  Sign Up
-              button.btn.btn-small.dropdown-toggle.btn-inverse data-toggle="dropdown" 
-                span.caret
-              ul.dropdown-menu.pull-right
-                li
-                  a data-hoodie-action="signin" href="#"  Sign In
-                li
-                  a data-hoodie-action="resetpassword" href="#"  Reset Password
-                li
-                  a data-hoodie-action="destroy" href="#"  Clear local data
-          /! /.hoodie-account-signedout
-          .hoodie-account-signedin
-            | Hello,
-            span.hoodie-username
-              /! usern name will be filled in here
-            span.btn-group
-              button.btn.btn-small.btn-inverse data-hoodie-action="signout"  Sign Out
-              button.btn.btn-small.dropdown-toggle.btn-inverse data-toggle="dropdown" 
-                span.caret
-              ul.dropdown-menu.pull-right
-                li
-                  a data-hoodie-action="changepassword" href="#"  Change Password
-                li
-                  a data-hoodie-action="changeusername" href="#"  Change Username
-                li
-                  a data-hoodie-action="destroy" href="#"  Destroy Account
-          /! /.hoodie-account-signedin
-          .hoodie-account-error
-            Hello,
-            span.btn-group
-              button.btn.btn-small.btn-danger data-hoodie-action="signin"  Authentication error: Sign in again
-              button.btn.btn-small.dropdown-toggle.btn-danger data-toggle="dropdown" 
-                span.caret
-              ul.dropdown-menu.pull-right
-                li
-                  a data-hoodie-action="signout" href="#"  Sign out
-          /! /.hoodie-account-error
-        /! /hoodieAccountBar
-      .content
-        ul#todolist
-        input#todoinput placeholder=("new todo ↵") type="text" /
-      .code
-      footer.copy
-        p &hearts; hood.ie 2014
-    /! /.container
+    .container-fluid
+      /! Markup for pre-registration
+      #registrationPage.col-xs-6.col-xs-offset-3
+        h3 Enter your details
+        hr
+          form#registerForm.form-horizontal
+            .form-group
+              label.col-sm-2.control-label for="username"  Email
+              .col-sm-10
+                input#username.form-control placeholder="Email" type="email" 
+            .form-group
+              label.col-sm-2.control-label for="password"  Password
+              .col-sm-10
+                input#password.form-control placeholder="Password" type="password" 
+            .form-group
+              .col-sm-offset-2.col-sm-10
+                button.btn.btn-success type="submit"  Register
+                button.btn.btn-default type="reset"  Clear
+      /! Markup for post-registration
+      #userPage.col-xs-6.col-xs-offset-3
+        h2
+        a#signout.btn.btn-sm.btn-default href="#"  Sign out
     script src="assets/vendor/jquery-2.1.0.min.js" 
-    script src="assets/vendor/bootstrap/bootstrap.js" 
-    script src="assets/vendor/prism/prism.js" 
+    script src="assets/vendor/bootstrap-sass/dist/js/bootstrap.min.js" 
     /! Load the dynamic version of hoodie.js that includes all the plugin code
     script src="/_api/_files/hoodie.js" 
-    script src="assets/vendor/hoodie.accountbar.bootstrap.js" 
-    script src="assets/vendor/bootstrap.modalform.js" 
     script src="assets/js/main.js" 
