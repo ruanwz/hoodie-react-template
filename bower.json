@@ -1,0 +1,20 @@
+{
+  "name": "hoodie-template",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ruanwz/hoodie-react-template",
+  "authors": [
+    "David Ruan <ruanwz@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.0.2"
+  }
+}
