@@ -12,44 +12,12 @@
     <link href="assets/css/main.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="container-fluid">
-      <!--Markup for pre-registration-->
-      <div class="col-xs-6 col-xs-offset-3" id="registrationPage">
-        <h3>
-          Enter your details
-        </h3>
-        <hr>
-          <form class="form-horizontal" id="registerForm">
-            <div class="form-group">
-              <label class="col-sm-2 control-label" for="username"> Email</label>
-              <div class="col-sm-10">
-                <input class="form-control" id="username" placeholder="Email" type="email" />
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-2 control-label" for="password"> Password</label>
-              <div class="col-sm-10">
-                <input class="form-control" id="password" placeholder="Password" type="password" />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10">
-                <button class="btn btn-success" type="submit"> Register</button><button class="btn btn-default" type="reset"> Clear</button>
-              </div>
-            </div>
-          </form>
-        </hr>
-      </div>
-      <!--Markup for post-registration-->
-      <div class="col-xs-6 col-xs-offset-3" id="userPage">
-        <h2></h2>
-        <a class="btn btn-sm btn-default" href="#" id="signout"> Sign out</a>
-      </div>
+    <div class="container-fluid", id="react">
     </div>
     <script src="assets/vendor/jquery-2.1.0.min.js"></script>
     <script src="assets/vendor/bootstrap-sass/dist/js/bootstrap.min.js"></script>
     <!--Load the dynamic version of hoodie.js that includes all the plugin code-->
     <script src="/_api/_files/hoodie.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/scripts/bundle.js"></script>
   </body>
 </html>

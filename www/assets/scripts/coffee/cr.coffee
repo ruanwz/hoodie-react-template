@@ -1,12 +1,15 @@
-React = require 'react'
 Jquery = require 'jquery'
-Fluxxor = require 'fluxxor'
+Flux = require 'flux'
+if jest?
+  React = require 'react/addons'
+  TestUtils = React.addons.TestUtils
+else
+  React = require 'react'
+  TestUtils = {}
 CR = {
-  Fluxxor: Fluxxor,
+  Flux: Flux,
   React: React,
-  FluxMixin: Fluxxor.FluxMixin(React),
-  FluxChildMixin: Fluxxor.FluxChildMixin(React),
-  StoreWatchMixin: Fluxxor.StoreWatchMixin,
+  TestUtils: TestUtils
   Jquery: Jquery,
   d: React.DOM
 }
